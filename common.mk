@@ -1,4 +1,4 @@
-# Copyright 2022 Paranoid Android
+# Copyright 2023 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -87,6 +87,9 @@ endif
 ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
 include vendor/qcom/opensource/core-utils/build/utils.mk
 endif
+
+6_1_FAMILY := \
+    pineapple
 
 # Kernel Families
 5_15_FAMILY := \
