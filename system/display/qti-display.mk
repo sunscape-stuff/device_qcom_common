@@ -21,7 +21,7 @@ endif
 
 # Packages
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V1-ndk_platform
+    android.hardware.graphics.common-V1-ndk
 
 # Properties
 PRODUCT_SYSTEM_PROPERTIES += \
