@@ -326,5 +326,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libwpa_client
 
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor
+
 PRODUCT_VENDOR_MOVE_ENABLED := true
 endif # QCOM_BOARD_PLATFORMS
