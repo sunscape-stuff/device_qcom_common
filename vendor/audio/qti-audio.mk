@@ -14,6 +14,9 @@
 
 ifeq ($(call is-board-platform-in-list,sm6150),true)
 include $(TOPDIR)$(TARGET_HALS_PATH)/audio/configs/msmsteppe/msmsteppe.mk
+# Flag for inheriting audio_vendor_product.mk on >4.19 targets
+else ifeq (,$(filter 3.18 4.4 4.9 4.14, $(TARGET_KERNEL_VERSION)))
+-include $(TOPDIR)$(TARGET_HALS_PATH)/audio/configs/audio_vendor_product.mk
 else
 include $(TOPDIR)$(TARGET_HALS_PATH)/audio/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 endif
