@@ -31,7 +31,8 @@ endif
 
 # Init
 PRODUCT_PACKAGES += \
-    init.aospa.perf.rc \
+    init.aospa.perf.common.rc \
+    init.aospa.perf.common.sh \
     init.qcom.aospa.rc \
     init.class_main.sh \
     init.crda.sh \
@@ -72,5 +73,10 @@ else
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.all.modules.ready=1
 endif
+
+else # Skip bin for < 5.4
+$(warning Building for kernel $(TARGET_KERNEL_VERSION). Only copying device/qcom/common/vendor/init/$(TARGET_BOARD_PLATFORM)/etc folder.)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/qcom/common/vendor/init/$(TARGET_BOARD_PLATFORM)/etc,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 endif

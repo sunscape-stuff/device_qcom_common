@@ -189,6 +189,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 
+DEVICE_FRAMEWORK_MANIFEST_FILE += \
+    device/qcom/qssi/framework_manifest.xml
+
 PRODUCT_VENDOR_PROPERTIES += ro.vendor.qti.va_aosp.support=1
 PRODUCT_ODM_PROPERTIES += ro.vendor.qti.va_odm.support=1
 endif
@@ -201,6 +204,10 @@ include $(QCOM_COMMON_PATH)/components.mk
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(QCOM_COMMON_PATH)/config.fs
+
+# GPS
+PRODUCT_PACKAGES += \
+    libcurl
 
 # Partition source order for Product/Build properties pickup.
 PRODUCT_SYSTEM_PROPERTIES += \
