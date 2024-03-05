@@ -70,7 +70,7 @@ In case you're too lazy to go into common.mk, here's a list of the kernel famili
 
 - Using only specific components
   > TARGET_COMMON_QTI_COMPONENTS := \
-  > adreno-5xx \
+  > adreno \
   > wlan
 
 - Using all the components you only need this
