@@ -12,5 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Set the path to the Qualcomm common vibrator.
+QCOM_COMMON_VIBRATOR := vendor/qcom/opensource/vibrator
+
+# Allow a device to manually override the vibrator it should use.
+ifneq ($(OVERRIDE_QCOM_COMMON_VIBRATOR),)
+QCOM_COMMON_VIBRATOR := $(OVERRIDE_QCOM_COMMON_VIBRATOR)
+endif
+
 # Vibrator
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
+$(call inherit-product, $(QCOM_COMMON_VIBRATOR)/vibrator-vendor-product.mk)
